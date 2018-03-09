@@ -12,19 +12,32 @@ ul.menu {
     height: 100vh;
     overflow: auto;
     float: left;
+    text-align: left;
 }
 
 ul.submenu {
+    padding: 0px;
     list-style: none;
     overflow: hidden;
     max-height: 0;
     -webkit-transition: all 0.5s ease-out;
 }
 
+ul.submenu li a {
+    padding-left: 30px !important;
+}
+
 ul.menu li a.active {
     overflow: auto;
     max-height: 200px;
     -webkit-transition: none;
+
+
+}
+
+ul.menu li a.active + ul {
+    overflow: auto;
+    max-height: unset;
 }
 
 ul.menu li a {

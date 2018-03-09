@@ -3,12 +3,14 @@ import './App.css';
 import './Menu.css';
 import Menu from "./Menu";
 import Product from "./Product";
+import logo from  "./images/wendyslogo.png";
 
 class WendysApp extends Component {
 
   constructor(props){
      super(props);
      this.state = {
+         // All data that will be populated in the menus comes from here. Add a new category/item by altering this.
          categories: [
              { name:'Foods', active: true, products: [
                  {name: 'Spicy Chicken Sandwich', pic:'sandwich.jpg', price:3.49, active: true},
@@ -29,6 +31,7 @@ class WendysApp extends Component {
      };
   } ;
 
+  // Handles the logic to replace the 'active' item selected on the menu.
   handleMenuClick = (index, innerIndex) => {
       const curProducts = this.state;
       curProducts.categories[this.state.selectedCategory].active = false;
@@ -45,7 +48,7 @@ class WendysApp extends Component {
     return (
       <div className="WendysApp">
         <header className="App-header">
-          <img src="http://1000logos.net/wp-content/uploads/2017/08/Wendys-Logo.png" className="App-logo" alt="logo" />
+          <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Karl's Picks</h1>
         </header>
 
